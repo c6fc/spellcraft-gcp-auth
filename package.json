@@ -1,0 +1,36 @@
+{
+  "name": "@c6fc/spellcraft-gcp-auth",
+  "version": "1.0.2",
+  "main": "module.js",
+  "scripts": {
+    "cli": "node utils/cli-test.js",
+    "test": "node utils/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/c6fc/spellcraft-gcp-auth.git"
+  },
+  "spellcraft": true,
+  "keywords": [
+    "spellcraft",
+    "gcp"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/c6fc/spellcraft-gcp-auth/issues"
+  },
+  "homepage": "https://github.com/c6fc/spellcraft-gcp-auth#readme",
+  "description": "A plugin to add functionality via @c6fc/spellcraft",
+  "peerDependencies": {
+    "@c6fc/spellcraft": "~0.1.0"
+  },
+  "devDependencies": {
+    "@c6fc/spellcraft": "~0.1.0",
+    "yargs": "^18.0.0"
+  },
+  "dependencies": {
+    "google-auth-library": "^10.5.0",
+    "googleapis": "^170.0.0"
+  }
+}
