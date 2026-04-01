@@ -12,6 +12,7 @@ local gcp = import "module.libsonnet";
 	api: gcp.api("cloudresourcemanager.v1.projects.list", {}),
 
 	getProjectId: gcp.getProjectId(),
+	getProjectMetadata: gcp.getProjectMetadata(),
 	listBuckets: gcp.listBuckets(),
 
 	// Providing any param overrides the default, which means we need to

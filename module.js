@@ -188,9 +188,14 @@ async function getProjectMetadata() {
         name: `projects/${projectId}`
     });
 
+    // 4. Get organization domain name
+    const orgDetails = await resourcemanager.organizations.get({ name: `organizations/${orgId}` });
+
     return {
         projectId: projectId,
         organizationId: orgId,
+        organizationDomain: orgDetails?.data?.displayName || false,
+        directoryId: orgDetails?.data?.directoryCustomerId,
         // billingAccountName is usually in the format "billingAccounts/0X0X0X-0X0X0X-0X0X0X"
         billingAccount: billingResponse.data?.billingAccountName?.split('/')?.[1] || false,
         // In GCP, the 'Quota Project' is technically the project context 
