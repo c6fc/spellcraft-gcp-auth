@@ -46,7 +46,7 @@ async function verifyCredentials() {
             expiresIn: data.expires_in,
             // Determine type based on properties or envvars
             authType: process.env.SPELLFRAME_GCP_IMPERSONATE ? 'Impersonated Service Account' :
-                      (data.email.endsWith('.gserviceaccount.com') ? 'Service Account' : 'User/Authorized Account'),
+                      (data?.email?.endsWith('.gserviceaccount.com') ? 'Service Account' : 'User/Authorized Account'),
             impersonatedBy: process.env.SPELLFRAME_GCP_IMPERSONATE ? 'Local ADC/Key' : null
         };
     } catch (e) {
@@ -141,7 +141,7 @@ async function enableServices(services) {
         console.log(`[+] Services enabled. Waiting 15s for IAM/Quota propagation...`);
         await new Promise(resolve => setTimeout(resolve, 15000));
     } else {
-        console.log(`[*] Requested GCP services were already enabled`);
+        console.log(`[*] Requested GCP services were already enabled: [${services.join(', ')}]`);
     }
 
     return true

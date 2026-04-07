@@ -1,6 +1,6 @@
 {
   "name": "@c6fc/spellcraft-gcp-auth",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "module.js",
   "scripts": {
     "cli": "node utils/cli-test.js",
